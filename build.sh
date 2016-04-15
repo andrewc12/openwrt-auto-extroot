@@ -25,7 +25,7 @@ fi
 BUILD=`dirname "$0"`"/build/"
 BUILD=`absolutize $BUILD`
 
-RELEASE="15.05"
+RELEASE="15.05.1"
 IMGTEMPDIR="${BUILD}/openwrt-build-image-extras"
 IMGBUILDERDIR="${BUILD}/OpenWrt-ImageBuilder-${RELEASE}-ar71xx-generic.Linux-x86_64"
 IMGBUILDERARCHIVE="OpenWrt-ImageBuilder-${RELEASE}-ar71xx-generic.Linux-x86_64.tar.bz2"
