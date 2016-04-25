@@ -38,8 +38,8 @@ export swapUUID=05d615b3-bef8-460c-9a23-52db8d09e002
 
 
     mkswap -L swap -U $swapUUID ${card}p1
-    mkfs.ext4 -L root -U $rootUUID ${card}p2
-    mkfs.ext4 -L data -U $dataUUID ${card}p3
+    mkfs.f2fs -L root -U $rootUUID ${card}p2
+    mkfs.f2fs -L data -U $dataUUID ${card}p3
 
  losetup -d /dev/loop0
  sync
