@@ -7,7 +7,7 @@ config global
       option check_fs '0'
 
 config swap
-      option uuid '05d615b3-bef8-460c-9a23-52db8d09e002'
+      option uuid '##SWAPUUID##'
       option enabled '1'
 
 config mount

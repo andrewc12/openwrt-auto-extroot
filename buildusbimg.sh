@@ -32,14 +32,19 @@ w
 q
 EOF
 
-export rootUUID=05d615b3-bef8-460c-9a23-52db8d09e000
-export dataUUID=05d615b3-bef8-460c-9a23-52db8d09e001
-export swapUUID=05d615b3-bef8-460c-9a23-52db8d09e002
+    mkswap -L swap ${card}p1
+    mkfs.f2fs -l root ${card}p2
+    mkfs.f2fs -l data ${card}p3
 
+export rootUUID=$(blkid -s UUID -o value ${card}p2)
+export dataUUID=$(blkid -s UUID -o value ${card}p3)
+export swapUUID=$(blkid -s UUID -o value ${card}p1)
 
-    mkswap -L swap -U $swapUUID ${card}p1
-    mkfs.f2fs -L root -U $rootUUID ${card}p2
-    mkfs.f2fs -L data -U $dataUUID ${card}p3
+cp fstab image-extras/common/etc/config/fstab
+
+sed -i "s/##SWAPUUID##/$swapUUID/g" image-extras/common/etc/config/fstab
+sed -i "s/##ROOTUUID##/$rootUUID/g" image-extras/common/etc/config/fstab
+sed -i "s/##DATAUUID##/$dataUUID/g" image-extras/common/etc/config/fstab
 
  losetup -d /dev/loop0
  sync
