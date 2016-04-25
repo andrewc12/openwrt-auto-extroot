@@ -13,7 +13,7 @@ config swap
 config mount
       option target '/overlay'
       option uuid '##ROOTUUID##'
-      option fstype 'f2fs'
+      option fstype 'ext4'
       option options 'rw,noatime'
       option enabled '1'
       option enabled_fsck '0'
@@ -21,7 +21,7 @@ config mount
 config mount
       option target '/mnt/data'
       option uuid '##DATAUUID##'
-      option fstype 'f2fs'
+      option fstype 'ext4'
       option options 'rw,noatime'
       option enabled '1'
       option enabled_fsck '0'

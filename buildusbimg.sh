@@ -33,8 +33,8 @@ q
 EOF
 
     mkswap -L swap ${card}p1
-    mkfs.f2fs -l root ${card}p2
-    mkfs.f2fs -l data ${card}p3
+    mkfs.ext4 -L root ${card}p2
+    mkfs.ext4 -L data ${card}p3
 
 export rootUUID=$(blkid -s UUID -o value ${card}p2)
 export dataUUID=$(blkid -s UUID -o value ${card}p3)
