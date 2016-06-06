@@ -33,7 +33,7 @@ IMGBUILDERURL="https://downloads.openwrt.org/chaos_calmer/${RELEASE}/ar71xx/gene
 
 # the absolute minimum for extroot to work at all (i.e. when the disk is already set up, for example by hand).
 # this list may be smaller and/or different for your router, but it works with my ar71xx.
-PREINSTALLED_PACKAGES="block-mount kmod-usb2 kmod-usb-storage kmod-fs-f2fs"
+PREINSTALLED_PACKAGES="block-mount kmod-usb2 kmod-usb-storage kmod-fs-ext4"
 PREINSTALLED_PACKAGES+=" blkid"
 
 # some kernel modules may also be needed for your hardware
